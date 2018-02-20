@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css?family=Cinzel|Lato:300,700,900');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  font-family: 'Cinzel', serif;
+}
+
+.container {
+  width: 100%;
+
+  .container:after  {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.main-div {
+  background-image: url('../img/main.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 800px;
+}
+
+.nav {
+  position: fixed;
+  font-size: 1.5em;
+  color: white;
+  width: 100%;
+  background: transparent;
+  transition: 1s ease-in-out;
+
+  &:hover {
+    background: white;
+    color:black;
+
+  }
+
+  h1 {
+    text-transform: uppercase;
+    float: left;
+
+  }
+
+  .menu {
+    list-style: none;
+    float:right;
+
+    li {
+      float:left;
+      padding: 5px;
+      line-height: 60px;
+    }
+  }
+}
+
+
+
+
+
