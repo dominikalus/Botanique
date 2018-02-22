@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Cinzel|Lato:300,700,900');
 
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,53 +14,317 @@
 .container {
   width: 100%;
 
-  .container:after  {
+  .container:after {
     content: "";
     display: block;
     clear: both;
   }
 }
 
-.main-div {
+// MAIN
+
+#main-div{
   background-image: url('../img/main.jpg');
   background-size: cover;
   background-position: center;
-  height: 800px;
+  height: 980px;
+  display:flex;
+  justify-content: flex-end;
+  align-items: center;
+
+  .typewriter{
+    position: absolute;
+    top: 85%;
+
+    h1{
+      text-shadow: 2px 2px 8px #f1f1f1;
+    }
+  }
 }
 
-.nav {
+.typewriter {
+
+  h1 {
+    color:white;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: .15em; /* Adjust as needed */
+    animation:
+            typing 3.5s steps(40, end),
+            blink-caret .75s step-end infinite;
+  }
+}
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+//nav
+
+nav {
   position: fixed;
-  font-size: 1.5em;
   color: white;
   width: 100%;
   background: transparent;
   transition: 1s ease-in-out;
+  z-index: 2;
 
   &:hover {
     background: white;
     color:black;
 
+    .hamburger{
+      border-top: 3px solid black;
+      transition: 1s ease-in-out;
+
+      &:before, &:after{
+        border-top: 3px solid black;
+        transition: 1s ease-in-out;
+      }
+
+      &:focus{
+        transform: rotate(45deg) translateY(5px);
+        border:none;
+      }
+    }
+
+    .menu li a{
+      color:black;
+      transition: 1s ease-in-out;
+    }
   }
 
   h1 {
     text-transform: uppercase;
     float: left;
-
+    margin-left: 90px;
+    line-height: 70px;
   }
 
   .menu {
     list-style: none;
-    float:right;
+    float: right;
+    padding-right: 30px;
 
     li {
-      float:left;
+      float: left;
       padding: 5px;
       line-height: 60px;
     }
+
+    a{
+      text-decoration: none;
+      color:white;
+    }
+  }
+}
+
+//responsive menu
+
+.hamburger {
+  width:40px;
+  height:35px;
+  border:0;
+  border-top: 3px solid white;
+  background: transparent;
+  position:relative;
+  transition: 0.3s transform linear;
+  float:right;
+  right: 20px;
+  top: 15px;
+
+  &:before, &:after {
+    content: '';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    border-top: 3px solid white;
+    transform: translateY(10px);
+  }
+
+  &:after{
+    transform: translateY(25px);
+    transition: 0.3s transform linear;
+  }
+
+  &:focus{
+    transform: rotate(45deg) translateY(5px);
+    border:none;
+  }
+
+  &:focus:after{
+    transform: rotate(-90deg) translateX(-10px);
+  }
+}
+
+
+//DRUGI SCROLL PLANTS
+
+#main-div-plants{
+  height: 1000px;
+
+  .div-plants-left, .div-plants-right {
+    width:50%;
+    background-image: url("../img/secscroll.jpg");
+    background-size: cover;
+    background-position: center;
+    height: 1000px;
+    float:left;
+  }
+
+  .div-plants-right{
+    background: #E0E3DA;
+    float:right;
   }
 }
 
 
 
+//VIDEO SCROLL
 
+#video {
+  position:relative;
+  max-width: 100%;
+  height:1000px;
+  display:flex;
+  align-items: center;
+  justify-content: center;
+
+  #background-video {
+    min-height: 100%;
+    min-width:100%;
+    height:auto;
+    widht:auto;
+    right: 0;
+    bottom: 0;
+    display:block;
+  }
+
+  .videotxt {
+    position: absolute;
+    top:450px;
+    color: #f1f1f1;
+    margin: 0 auto;
+    z-index: 2;
+    text-align: center;
+  }
+}
+
+//greenhouse
+
+#green-div {
+  background-image: url('../img/shop.jpg');
+  background-size: cover;
+  background-position: center;
+  height: 980px;
+}
+
+//footer
+
+#footer{
+  display:flex;
+  flex-direction: row;
+  justify-content: center space-evenly;
+
+  .socialmedia {
+    display:flex;
+    flex-direction: column;
+
+    & > a{
+      display: block;
+      margin-top: 10px;
+      text-align: center;
+    }
+  }
+}
+
+.contact-div > p {
+  border: 1px solid black;
+  padding: 5px;
+  margin-top:10px;
+  width: 150px;
+}
+
+.contact{
+  display:inline-block;
+  font-size:1.3em;
+  margin-top: 10px;
+
+  &:after {
+    content: "";
+    background-color: black;
+    width: 150px;
+    height: 2px;
+    display: block;
+  }
+}
+
+.contact-img {
+  padding: 10px;
+}
+
+
+//RWD
+
+//klasa , ktora wyswietla podmenu w rwd !
+.active {
+  display: block !important;
+}
+
+
+@media (max-width: 760px){
+
+  .menu, .div-plants-left, #video {
+    display:none;
+  }
+
+  .div-plants-right{
+    width:100%;
+  }
+
+  .hamburger {
+    display: block;
+  }
+
+  #green-div{
+    background-image: url('../img/smallshop.jpg');
+    background-size: cover;
+    background-position: center;
+  }
+
+
+}
+
+@media (min-width:760px) and (max-width: 1050px) {
+  nav {
+    font-size: 1em;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+@media (min-width:1050px) and (max-width: 1350px) {
+  nav {
+    font-size: 1.5em;
+  }
+  .hamburger {
+    display: none;
+  }
+}
+
+
+
+@media (min-width: 1350px) {
+  .hamburger {
+    display: none;
+  }
+  nav {
+    font-size: 2em;
+  }
+}
 

@@ -1,8 +1,26 @@
 import React from "react";
+import TextTyper from './TextTyper.jsx';
 
 export default class VideoBackground extends React.Component {
-    render() {
-        return <div className='video'></div>
+    constructor(props) {
+        super(props);
 
+        this.state = {
+            videoURL: 'video/699569608.mp4'
+        }
+    }
+
+    render() {
+        return (<div id='video'>
+                <video id="background-video" loop autoPlay>
+                    <source src={this.state.videoURL} type="video/mp4"/>
+                </video>
+                <div className='videotxt'>
+                    <TextTyper text='Flowers and plants always look like the people they live  with, somehow.'/>
+                </div>
+            </div>
+        )
     }
 }
+
+//<Flowers and plants always look like the people they live  with, somehow.</h2>
