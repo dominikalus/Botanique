@@ -15,6 +15,7 @@ constructor(props){
 
 
 // dodaje klase active tylko w momencie gdzie jest true !
+    //
     render() {
         return(
                 <nav>
@@ -23,7 +24,7 @@ constructor(props){
                     <ul className={`menu ${this.state.active ? 'active' : ''}`}>
                         <li><a href="#main-div">Main ~</a></li>
                         <li><a href="#main-div-plants">Plants ~</a></li>
-                        <li><a href="">Flowers ~</a></li>
+                        <li><a href="#slider">Gallery ~</a></li>
                         <li><a href="#green-div">Our Green House ~</a></li>
                         <li><a href="#footer">Contact</a></li>
                      </ul>

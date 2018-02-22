@@ -5,9 +5,9 @@ export default class Footer extends React.Component {
         return <div id='footer'>
                 <div className='contact-div'>
                     <span className='contact'>Contact</span>
-                    <p>Email</p>
-                    <p>Text</p>
-                    <p>Call</p>
+                    <p><a href='mailto: contact@botanique.com'>Email</a></p>
+                    <p><a href='tel: 123456'>Text</a></p>
+                    <p><a href='sms: 123456'>Call</a></p>
                 </div>
                 <div className='socialmedia'>
                     <span className='contact'>Social Media</span>

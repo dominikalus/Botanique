@@ -12,9 +12,11 @@ export default class VideoBackground extends React.Component {
 
     render() {
         return (<div id='video'>
-                <video id="background-video" loop autoPlay>
-                    <source src={this.state.videoURL} type="video/mp4"/>
-                </video>
+                <div className='videodiv'>
+                    <video id="background-video" loop autoPlay>
+                        <source src={this.state.videoURL} type="video/mp4"/>
+                    </video>
+                </div>
                 <div className='videotxt'>
                     <TextTyper text='Flowers and plants always look like the people they live  with, somehow.'/>
                 </div>
@@ -22,5 +24,3 @@ export default class VideoBackground extends React.Component {
         )
     }
 }
-
-//<Flowers and plants always look like the people they live  with, somehow.</h2>
