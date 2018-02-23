@@ -16,7 +16,7 @@ export default class Footer extends React.Component {
                    <a href='#'> <img style={{width:'50px', height:'50px'}} src={'./img/pinterest.png'}/></a>
                 </div>
                 <div className='contact-img'>
-                    <img style={{width:'400px', height:'300px'}} src={'./img/contact.jpg'}/>
+
                 </div>
             </div>
     }

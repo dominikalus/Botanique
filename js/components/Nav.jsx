@@ -15,12 +15,11 @@ constructor(props){
 
 
 // dodaje klase active tylko w momencie gdzie jest true !
-    //
     render() {
         return(
-                <nav>
+                <nav className={`${this.state.active ? 'active' : ''}`}>
                     <h1>Botanique</h1>
-                    <button onClick={this.handleClick} className='hamburger'></button>
+                    <button onClick={this.handleClick} className={`hamburger ${this.state.active ? 'active' : ''}`}></button>
                     <ul className={`menu ${this.state.active ? 'active' : ''}`}>
                         <li><a href="#main-div">Main ~</a></li>
                         <li><a href="#main-div-plants">Plants ~</a></li>

@@ -2,18 +2,22 @@ import React from "react";
 
 
 class PlantsBox extends React.Component{
+    handleClick = () => {
+        this.props.onClick(this.props.plants.name, this.props.plants.description)
+    }
+
     render(){
-        return <div>
-            <img src={this.props.plants.img}/>
+        return <div className='plantimgs'>
+            <img onClick={this.handleClick} src={this.props.plants.img} style ={{width:'300px', height:'300px'}}/>
         </div>
     }
 }
 
 class PlantInfo extends React.Component{
     render() {
-        return <div>
-            <h2>{this.props.currName}</h2>
-            <p>{this.props.currDescripiton}</p>
+        return <div className='plantinfo'>
+            <h2>{this.props.name}</h2>
+            <p>{this.props.info}</p>
         </div>
     }
 }
@@ -47,22 +51,23 @@ export default class Plants extends React.Component {
             .catch(err => console.log("err"))
     }
 
-    handleClick = () => {
+    handleClick = (name, descripiton) => {
+        console.log('dzialam');
         this.setState({
-            // currName: this.plants.name,
-            // currDescription: this.plants.descripiton
+            currName: name,
+            currDescription: descripiton
         })
     }
 
     render() {
         const plantArray = this.state.plants.map((plants, index) => {
-            console.log(plants,index);
+
             return <PlantsBox onClick={this.handleClick} plants={plants}/>
         });
 
         return <div id='main-div-plants'>
             <div className='div-plants-left'>
-                <PlantInfo/>
+                <PlantInfo name={this.state.currName} info={this.state.currDescription}/>
             </div>
             <div className='div-plants-right'>
                 {plantArray}
