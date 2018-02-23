@@ -8,7 +8,7 @@ class PlantsBox extends React.Component{
 
     render(){
         return <div className='plantimgs'>
-            <img onClick={this.handleClick} src={this.props.plants.img} style ={{width:'300px', height:'300px'}}/>
+            <img onClick={this.handleClick} src={this.props.plants.img}/>
         </div>
     }
 }

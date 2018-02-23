@@ -45,6 +45,10 @@
     letter-spacing: .15em; /* Adjust as needed */
     animation: typing 3.5s steps(40, end),
     blink-caret .75s step-end infinite;
+
+    @media (max-width: 700px){
+      font-size:1em;
+    }
   }
 }
 
@@ -189,6 +193,10 @@ nav {
       background: rgba(7, 7, 7, 0.7);
       margin:30px;
 
+      @media (max-width: 880px){
+font-size:1em;
+      }
+
       h2{
         margin-bottom: 30px;
         border-bottom: 3px solid white;
@@ -204,11 +212,36 @@ nav {
     flex-wrap: wrap;
     justify-content: center;
 
+    @media (max-width: 880px){
+      display:flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+    }
+
     .plantimgs {
       padding: 10px;
 
-      img{
+       > img{
         border:3px solid white;
+        width:300px;
+        height:300px;
+         @media (max-width: 1280px){
+           width:250px;
+           height:250px;
+         }
+
+         @media (max-width: 1080px){
+           width:200px;
+           height:200px;
+         }
+
+         @media (max-width: 880px){
+           width:150px;
+           height:150px;
+           display:flex;
+           flex-direction: column;
+         }
       }
 
     }
@@ -350,21 +383,26 @@ button {
 
 //RWD
 
-//klasa , ktora wyswietla podmenu w rwd !
+//class!
 .active, .active > li a {
   display: block !important;
   background: white;
   color: black !important;
 }
 
-@media (max-width: 760px) {
+@media (max-width: 845px) {
 
-  .menu, .div-plants-left {
+  nav .menu{
     display: none;
   }
 
-  .div-plants-right {
-    width: 100% !important;
+  .main-div-plants{
+    display: flex;
+    flex-direction: column;
+
+    .div-plants-right, .div-plants-left {
+      float:none;
+    }
   }
 
   .hamburger {
@@ -416,17 +454,14 @@ button {
   }
 }
 
-@media (min-width: 1080px) and (max-width: 1280px) {
-  .main-div-plants .div-plants-left{
-    width:40%;
-  }
 
-  .main-div-plants .div-plants-right{
-    width:60%;
+@media (min-width: 1080px) and (max-width: 1280px){
+  .hamburger {
+    display: none;
   }
 }
 
-@media (min-width: 1080px) and (max-width: 1350px) {
+@media (min-width: 1280px) and (max-width: 1350px) {
   nav {
     font-size: 1.5em;
   }
