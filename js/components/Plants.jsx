@@ -52,7 +52,6 @@ export default class Plants extends React.Component {
     }
 
     handleClick = (name, descripiton) => {
-        console.log('dzialam');
         this.setState({
             currName: name,
             currDescription: descripiton
