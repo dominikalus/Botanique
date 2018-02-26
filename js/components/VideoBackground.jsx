@@ -20,7 +20,7 @@ export default class VideoBackground extends React.Component {
                 </div>
                 <div className='videotxt'>
                     <LazyLoad>
-                        <TextTyper text='Flowers and plants always look like the people they live  with, somehow.'/>
+                        <TextTyper text='Flowers and plants always look like the people they live  with, somehow..'/>
                     </LazyLoad>
                 </div>
             </div>
