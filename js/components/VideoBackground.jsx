@@ -1,5 +1,6 @@
 import React from "react";
 import TextTyper from './TextTyper.jsx';
+import LazyLoad from 'react-lazyload';
 
 export default class VideoBackground extends React.Component {
     constructor(props) {
@@ -18,7 +19,9 @@ export default class VideoBackground extends React.Component {
                     </video>
                 </div>
                 <div className='videotxt'>
-                    <TextTyper text='Flowers and plants always look like the people they live  with, somehow.'/>
+                    <LazyLoad>
+                        <TextTyper text='Flowers and plants always look like the people they live  with, somehow.'/>
+                    </LazyLoad>
                 </div>
             </div>
         )
