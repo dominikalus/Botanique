@@ -7,7 +7,7 @@ export default class VideoBackground extends React.Component {
         super(props);
 
         this.state = {
-            videoURL: 'video/699569608.mp4'
+            videoURL: 'https://s3.amazonaws.com/vipower-backup/699569608.mp4'
         }
     }
 
