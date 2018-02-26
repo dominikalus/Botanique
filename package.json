@@ -17,8 +17,7 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-util": "^3.0.8",
     "react": "^15.6.2",
-    "react-dom": "^15.6.2",
-    "react-onepage-scroll": "file:react-onepage-scroll"
+    "react-dom": "^15.6.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
