@@ -11,6 +11,7 @@
 }
 
 .container {
+  height:100%;
   width: 100%;
 
   .container:after {
@@ -26,7 +27,7 @@
   background-image: url('../img/main.jpg');
   background-size: cover;
   background-position: center;
-  height: 980px;
+  height: 1100px;
   display: flex;
   justify-content: flex-end;
   align-items: center;
@@ -295,7 +296,7 @@ font-size:1em;
   background-image: url("../img/sliderbckgrnd.jpg");
   background-position: bottom right;
   background-size: cover;
-  height: 1000px;
+  height: 1100px;
   display: flex;
   justify-content: center;
   display: flex;
